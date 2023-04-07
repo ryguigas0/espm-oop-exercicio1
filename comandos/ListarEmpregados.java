@@ -1,4 +1,4 @@
-package models.comandos;
+package comandos;
 
 import java.util.ArrayList;
 

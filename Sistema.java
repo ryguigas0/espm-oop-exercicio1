@@ -1,9 +1,9 @@
-import static javax.swing.JOptionPane.*;
 
 import java.util.ArrayList;
+
+import comandos.*;
 import models.Comando;
 import models.Pessoa;
-import models.comandos.*;
 
 public class Sistema {
 
@@ -17,7 +17,8 @@ public class Sistema {
 
         do {
             try {
-                int opcao = dialogoOpcoes("Cadastrar empregado", "Cadastrar cliente", "Pesquisar", "Listar empregados",
+                int opcao = Auxiliar.dialogoOpcoesComTitulo("Escolha uma opção abaixo:", "Cadastrar empregado",
+                        "Cadastrar cliente", "Pesquisar", "Listar empregados",
                         "Listar clientes", "Remover", "Finalizar");
 
                 if (opcao == -2) {
@@ -33,37 +34,9 @@ public class Sistema {
                 comandoEscolhido.executar(databasePessoas);
 
             } catch (Exception e) {
-                showMessageDialog(getRootFrame(), e.getMessage());
+                Auxiliar.dialogoMensagem(e.getMessage());
             }
 
         } while (alive);
-    }
-
-    private int dialogoOpcoes(String... opcoes) {
-        String msg = "";
-
-        for (int i = 0; i < opcoes.length; i++) {
-            msg += String.format("%d. %s\n", i + 1, opcoes[i]);
-        }
-
-        String userInput = showInputDialog(getRootFrame(), msg);
-
-        try {
-            int parsedUserInput = Integer.parseInt(userInput) - 1;
-
-            if (parsedUserInput < 0 || parsedUserInput > (opcoes.length - 1)) {
-                return -2;
-            }
-
-            return parsedUserInput;
-
-        } catch (Exception e) {
-            if (userInput == null) {
-                return -1;
-            }
-
-            return -2;
-
-        }
     }
 }

@@ -17,4 +17,8 @@ public abstract class Pessoa {
         return "Pessoa [nome=" + nome + ", cpf=" + cpf + "]";
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        return ((Pessoa) obj).cpf.equals(this.cpf);
+    }
 }

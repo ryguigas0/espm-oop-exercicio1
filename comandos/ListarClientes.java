@@ -1,11 +1,11 @@
-package models.comandos;
+package comandos;
 
 import java.util.ArrayList;
 
 import models.Comando;
 import models.Pessoa;
 
-public class CadastrarEmpregado extends Comando{
+public class ListarClientes extends Comando{
 
     @Override
     public void executar(ArrayList<Pessoa> database) {
