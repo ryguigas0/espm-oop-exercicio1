@@ -29,8 +29,6 @@ public class Sistema {
 
                 Comando comandoEscolhido = mapComandos[opcao];
 
-                System.out.println(comandoEscolhido);
-
                 comandoEscolhido.executar(databasePessoas);
 
             } catch (Exception e) {
