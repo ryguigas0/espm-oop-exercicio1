@@ -59,4 +59,8 @@ public abstract class Auxiliar {
     public static String dialogoEscrever(String titulo) {
         return showInputDialog(getRootFrame(), titulo);
     }
+
+    public static boolean dialogoConfirmar(String mensagem) {
+        return showConfirmDialog(getRootFrame(), mensagem, "Input", YES_NO_OPTION) == YES_OPTION;
+    }
 }
