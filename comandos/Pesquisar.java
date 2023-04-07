@@ -12,6 +12,9 @@ public class Pesquisar extends Comando {
     @Override
     public void executar(ArrayList<Pessoa> database) {
         String cpfPesquisa = Auxiliar.dialogoEscrever("Digite o CPF para pesquisa");
+        if (cpfPesquisa == null) {
+            return;
+        }
 
         Pessoa pessoaEncontrada = null;
         for (Pessoa pessoa : database) {
