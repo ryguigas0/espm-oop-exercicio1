@@ -3,7 +3,7 @@ package models;
 /**
  * Pessoa
  */
-public abstract class Pessoa {
+public class Pessoa {
     protected String nome;
     protected String cpf;
 
